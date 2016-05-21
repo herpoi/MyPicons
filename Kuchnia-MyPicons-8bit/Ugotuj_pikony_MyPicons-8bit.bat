@@ -18,7 +18,7 @@ for %%i in (do_ugotowania\*.*) do (
 	:: Dodaj przeŸroczyst¹ ramkê na wypadek gdyby logo by³o by³o prostokatne i wype³ni³o ca³¹ powierzchniê robocz¹...
 	%MAGICK_PATH%\convert "%%i" -bordercolor none -compose Copy -border 10 "MyPicons-transparent-8bit\%%~ni.png"
 	:: ...a teraz przytnij i zmieñ rozmiar
-	%MAGICK_PATH%\convert -background none "MyPicons-transparent-8bit\%%~ni.png" -trim +repage -resize 220x132^> -gravity center -extent 220x132 "MyPicons-transparent-8bit\%%~ni.png"
+	%MAGICK_PATH%\convert -background none "MyPicons-transparent-8bit\%%~ni.png" -trim +repage -resize 200x120^> -gravity center -extent 220x132 "MyPicons-transparent-8bit\%%~ni.png"
 )
 :: Optymalizacja pngquant
 for %%i in (MyPicons-transparent-8bit\*.png) do ("tools\pngquant2.exe" --force --ext .png 256 "%%i")
